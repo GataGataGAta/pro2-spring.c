@@ -28,7 +28,7 @@ int main(void)
 
     double x_dis, y_dis;  // x, y方向の距離
     double dis;           // 2つの空席の距離
-    double max_dis = 0.0; // 最も離れた空席の距離
+    double min_dis = 256.0; // 最も離れた空席の距離
     int max_dis_seat[2] = {0, 0};  // 最も離れた空席の番号
     int i, j;
 
@@ -40,15 +40,15 @@ int main(void)
             x_dis = seat[i].x - seat[j].x;
             y_dis = seat[i].y - seat[j].y;
             dis = sqrt(x_dis * x_dis + y_dis * y_dis); // 距離の計算
-            if (max_dis < dis)
+            if (min_dis > dis)
             {
-                max_dis = dis;
+                min_dis = dis;
                 max_dis_seat[0] = seat[i].no;
                 max_dis_seat[1] = seat[j].no;
             }
         }
     }
-    printf("最も離れた座席は %d と %d です (距離 %f)\n", max_dis_seat[0], max_dis_seat[1], max_dis);
+    printf("最も近い座席は %d と %d です (距離 %f)\n", max_dis_seat[0], max_dis_seat[1], min_dis);
 
     return 0;
 }
