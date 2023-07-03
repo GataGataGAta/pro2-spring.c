@@ -6,7 +6,7 @@ int main( int argc, char *argv[] )
     int i = 0;
     //入力されたコマンドライン引数をint型に変換するための配列
     int b[argc];
-    int sum = 0;
+    double sum = 0.0;
     double average;
 
     if( argc != 5 )
