@@ -10,7 +10,7 @@ int main(void)
     int mounth[N] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     printf("整数を入力してください>>>");
-    scanf("%d, %d", &m, &d);
+    scanf("%d %d", &m, &d);
 
      for(int i = 0; i < m - 1; i++)
     {

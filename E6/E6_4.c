@@ -8,7 +8,7 @@ int main(void)
     int m, n;
     
     printf("整数を入力してください>>>");
-    scanf("%d, %d", &m, &n);
+    scanf("%d %d", &m, &n);
 
     for(int i = 0; i < N; i++)
     {
@@ -18,9 +18,9 @@ int main(void)
     printf("\n");
 
 
-    for(int j = 0; j < n; j++)
+    for(int j = 0; j < n - 1; j++)
     {
-        b[j] = a[m + (j - 1)];
+        b[j] = a[m + j];
         printf("b.%d ", b[j]);
     }
      printf("\n");
