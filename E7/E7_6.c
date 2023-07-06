@@ -20,7 +20,7 @@ int main ( void )
 	for( i = 0; i <= N; i++ )
 		freq[ i ] = 0;
 
-    for(int j = 0; j < NUM_SCORE - 1; j++)
+    for(int j = 0; j < NUM_SCORE; j++)
     {
         freq[score[j]]++;
     }

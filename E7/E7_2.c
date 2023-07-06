@@ -17,7 +17,7 @@ int main()
         int a[50];
 
         i = 0;
-        while(i * i < n)
+        while(i * i <= n)
         {
             a[i] = i * i;
             printf("%d\n", a[i]);
