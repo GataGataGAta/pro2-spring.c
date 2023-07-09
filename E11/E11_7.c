@@ -45,6 +45,12 @@ int main(void)
      { 1920, 60, 60, 60, 0 },
     };
 
+    for(i = 0; i < N; i++)
+    {
+        print_student(person[i]);
+        printf("\n");
+    }
+
     printf("四桁の学生番号を入力してください:");
     scanf("%d", &c);
 

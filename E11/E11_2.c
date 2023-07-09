@@ -16,7 +16,7 @@ void complex_print( complex_t a)
 complex_t complex_add( complex_t a, complex_t b )
 {
     complex_t sum;
-    sum.im = a.im + a.im;
+    sum.im = a.im + b.im;
     sum.re = a.re + b.re;
     return sum;
 }
@@ -24,8 +24,8 @@ complex_t complex_add( complex_t a, complex_t b )
 complex_t complex_mul( complex_t a, complex_t b )
 {
     complex_t prod;
-    prod.im = a.im * b.im;
-    prod.re = a.re * b.re;
+    prod.re = (a.re * b.re) - (a.im * b.im);
+    prod.im = (a.re * b.im) + (a.im * b.re);
     return prod;
 }
 
