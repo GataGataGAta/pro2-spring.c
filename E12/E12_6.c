@@ -3,42 +3,32 @@
 #include<time.h>
 #include<math.h>
 
-//サイコロの部分をコーディング
 double dice(int i)
 {
     int a, j;
     double sum = 0.0;
-    double average = 0.0;
 
-    srand((unsigned int)time(NULL));
-    for (j = 0;j < i; j++)
+    for (j = 0; j < i; j++)
     {
         a = 1 + rand() % 6;
         sum += a;
-        //printf("%2d回目: %2d\n",j, a); 
     }
-    //printf("\n");
 
-    //平均を出力
-    average = sum / i; 
-    //printf("平均%f\n", average);
-
-    return average;
+    return sum / i;
 }
 
 double dice_average(int i)
 {
     int j, a;
     double sum = 0.0;
-    srand((unsigned int)time(NULL));
-    for (j = 0;j < i; j++)
+
+    for (j = 0; j < i; j++)
     {
         a = 1 + rand() % 6;
         sum += a * a;
     }
 
     return sum / i;
-
 }
 
 int main(void)
@@ -47,18 +37,19 @@ int main(void)
     double b = 0.0;
     int N = 10000;
     int M = 1000000;
+    double tmp = 0.0;
+
+    srand((unsigned int)time(NULL));
 
     for(int i = 0; i < M ; i++)
     {
-        a += dice( N );
-    }
-    
-    for(int j = 0; j < M; j++)
-    {
-        b += dice_average( N ) - dice( N );
+        tmp = dice(N);
+        a += tmp;
+        b += tmp * tmp;
     }
 
-    printf("N = %d 標本平均の平均:%lf\n",N, a / M);
-    printf("N = %d 標本平均の分散:%lf\n",N, b / M) ;
+    printf("N = %d 標本平均の平均:%lf\n", N, a / M);
+    printf("N = %d 標本平均の分散:%lf\n", N, (b / M) - pow(a / M, 2));
 
+    return 0;
 }

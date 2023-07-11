@@ -1,27 +1,27 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int recurrence( int x, int n )
+int recurrence(int x, int n) // 第 i 項を表す変数 x と，第 i+1 項を表す変数 y を定義
 {
     return 2 * x - n * n;
 }
 
 int main(void)
 {
-    int x, y;
+    int x, i;
     printf("整数を入力してください>>>");
-    scanf("%d", &x);
-    
-    //初項を表示
-    printf("a_0 = %d\n", x);
+    scanf("%d", &x); // キーボードから受け取った整数を変数 x に代入
 
-    y = 0;
-    for(int i = 0; i < 9; i++)
+    // 第 0 項を表示
+    printf("a_%d = %d\n", 0, x);
+    for (i = 0; i < 9; i++)
     {
-        y = recurrence(x, i);
-        printf("a_%d = %d\n", i, y);
+        // 第 i 項の値 x と i を関数に渡し，戻り値を 第 (i+1) 項を表す変数 y に代入
+        int y = recurrence(x, i); 
+
+        // 第 (i+1) 項を表示
+        printf("a_%d = %d\n", i + 1, y);
+
+        // 第 (i+1) 項を表す変数の値 y  を 第 i 項を表す変数 x に代入
         x = y;
     }
-    printf("\n");
-
-    return 0;
 }

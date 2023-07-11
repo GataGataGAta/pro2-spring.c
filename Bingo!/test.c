@@ -1,0 +1,1 @@
+bingo_card[j][i] = 15 * i + 1 +rand() % 15;

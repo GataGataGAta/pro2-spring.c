@@ -15,24 +15,28 @@ double quad_eq(int a, int b, int d)
     double x2 = (-b - sqrt(d)) / (2.0 * a);
 
     // x1とx2の大きい方を返す
-    return x1 > x2 ? x1 : x2;
+    if(x1 > x2)
+    return x1;
+
+    else
+    return x2;
 }
 
 int main()
 {
     int a, b, c;
 
-    printf("Please input integer a, b and c for the equation ax^2 + bx + c = 0:\n");
+    printf("方程式のa,b,cを入力してください。 ax^2 + bx + c = 0:\n");
     scanf("%d%d%d", &a, &b, &c);
 
     int d = discriminant(a, b, c);
     if (d > 0)
     {
-        printf("2個の実数解のうち大きい方は x = %.2f です\n", quad_eq(a, b, d));
+        printf("2個の実数解のうち大きい方は x = %f です\n", quad_eq(a, b, d));
     }
     else if (d == 0)
     {
-        printf("重解は x = %.2f です\n", quad_eq(a, b, d));
+        printf("重解は x = %f です\n", quad_eq(a, b, d));
     }
     else
     {
