@@ -2,7 +2,7 @@
 
 int risoku(double a)
 {
-    return a * 1.05;
+    return a * 1.005;
 }
 
 int main(void)

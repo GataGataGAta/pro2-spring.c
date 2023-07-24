@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-// n 以上 n+10 未満の整数の 2 乗の和を計算する関数
 int sos(int n)
 {
     int sum = 0;

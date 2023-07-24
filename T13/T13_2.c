@@ -9,7 +9,7 @@ int main(void)
     for(j = 0;; j++)
     {
         t += j * j * j;
-        if(t >= n)
+        if(t > n)
         {
             break;
         }
